@@ -546,6 +546,7 @@ do_start()
 	connect_platform
 	backward_compatibility_link
 
+	echo 1 > $config_path/suspend
 	$THERMAL_CONTROL $thermal_type $max_tachos $max_psus&
 }
 

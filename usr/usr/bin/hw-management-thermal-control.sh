@@ -115,6 +115,7 @@ max_ports=${5:-$max_ports_def}
 # Local constants
 pwm_noact=0
 pwm_max=1
+pwm_def_rpm=153
 pwm_max_rpm=255
 max_amb=120000
 untrusted_sensor=0
@@ -882,8 +883,8 @@ disable_zones_max_pwm() {
 			fi
 		fi
 	done
-	echo $pwm_max_rpm > $pwm
-	log_action_msg "Set fan speed to maximum"
+	echo $pwm_def_rpm > $pwm
+	log_action_msg "Set fan speed to 60% percent"
 }
 
 # Validate thermal configuration.
